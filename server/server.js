@@ -16,7 +16,7 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
   console.log('New user connected');
 
-  socket.emit('newMessage', generateMessage('Admin', 'Welcome to the  chat app')); // Only user who joined see this message
+  socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app')); // Only user who joined see this message
 
   socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined')); // User who joined does not see this message
 
